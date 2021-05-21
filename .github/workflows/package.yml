@@ -19,8 +19,6 @@ jobs:
 
       - name: Build for darwin
         run: |
-          /usr/libexec/PlistBuddy -c "Set :CFBundleVersion ${{ steps.version.outputs.tag }}" info.plist
-          /usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString ${{ steps.version.outputs.tag }}" info.plist
           wails build -f -p
 
       - name: Create darwin disk image
