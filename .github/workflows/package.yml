@@ -6,6 +6,10 @@ jobs:
   package:
     runs-on: macos-10.15
     steps:
+      - name: Get version tag
+        id: version
+        run: echo "::set-output name=tag::${GITHUB_REF/refs\/tags\//}"
+
       - name: Install Go
         uses: actions/setup-go@v2
         with:
