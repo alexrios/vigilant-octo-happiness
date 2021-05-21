@@ -26,8 +26,8 @@ jobs:
       - name: Create darwin disk image
         run: |
           brew install create-dmg
-          rm build/voh
-          create-dmg --volname "voh" --volicon "assets/darwin/dmg_icon.icns" --background "assets/darwin/dmg_bg.png" --window-size 512 360 --icon-size 100 --icon "voh.app" 100 185  --hide-extension "voh.app" --app-drop-link 388 185 "voh_${{ steps.version.outputs.tag }}_Darwin_x86_64.dmg" "build"
+          rm build/vigilant-octo-happiness
+          create-dmg --volname "vigilant-octo-happiness" --volicon "assets/darwin/dmg_icon.icns" --background "assets/darwin/dmg_bg.png" --window-size 512 360 --icon-size 100 --icon "voh.app" 100 185  --hide-extension "voh.app" --app-drop-link 388 185 "voh_${{ steps.version.outputs.tag }}_Darwin_x86_64.dmg" "build"
 
       - name: Upload darwin disk image
         uses: actions/upload-artifact@v2
